@@ -1,6 +1,8 @@
 package application;
 
+import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 import chess.ChessException;
@@ -13,6 +15,7 @@ public class Program {
 	public static void main(String[] args) {
 		
 		ChessMatch chessMatch = new ChessMatch();
+		List<ChessPiece> capturedPieces = new ArrayList<ChessPiece>();
 		
 		Scanner sc = new Scanner(System.in);
 		// Receber a matriz de peças da partida de xadrez
@@ -21,7 +24,7 @@ public class Program {
 			try {
 				
 				UI.clearScreen();
-				UI.printMatch( chessMatch );
+				UI.printMatch( chessMatch, capturedPieces);
 				System.err.println();
 				System.out.println("Source: ");
 				ChessPosition source = UI.readChessPosition(sc);
@@ -37,6 +40,10 @@ public class Program {
 				ChessPosition target = UI.readChessPosition(sc);
 				
 				ChessPiece capturedPiece = chessMatch.performChessMove(source, target);
+				
+				if (capturedPiece != null) {
+					capturedPieces.add(capturedPiece);
+				}
 				
 				
 			} catch (ChessException e) {
