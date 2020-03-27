@@ -34,6 +34,11 @@ public abstract class ChessPiece extends Piece {
 		return color;
 	}	
 	
+	public ChessPosition getChessPosition() {
+		// pegar a posição e concerter para chessPosition
+		return ChessPosition.fromPosition(position);
+	}
+	
 	// Para saber se existe uma peça adversária em uma dada casa.
 	protected boolean isThereOpponentPiece( Position position ) {
 		
