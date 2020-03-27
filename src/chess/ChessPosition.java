@@ -39,6 +39,11 @@ public class ChessPosition {
 	public char getColumn() {
 		return this.column;
 	}
+	
+	
+	public void setColumn(char column) {
+		this.column = column;
+	}
 
 	/**
 	 * metodo get().

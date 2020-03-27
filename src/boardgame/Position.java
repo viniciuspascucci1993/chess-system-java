@@ -58,6 +58,13 @@ public class Position {
 		this.column = column;
 	}
 	
+	// setando novos valores
+	public void setValues( int row, int column) {
+		
+		this.row = row;
+		this.column = column;
+	}
+	
 	/**
 	 * Metodo toString para imprimir uma Position na tela.
 	 */

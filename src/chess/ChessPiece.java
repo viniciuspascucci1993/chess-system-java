@@ -2,6 +2,7 @@ package chess;
 
 import boardgame.Board;
 import boardgame.Piece;
+import boardgame.Position;
 
 /**
  * Classe Peça de xadrez.
@@ -33,4 +34,11 @@ public abstract class ChessPiece extends Piece {
 		return color;
 	}	
 	
+	// Para saber se existe uma peça adversária em uma dada casa.
+	protected boolean isThereOpponentPiece( Position position ) {
+		
+		ChessPiece p =  ( ChessPiece ) getBoard().piece(position);
+		
+		return p != null && p.getColor() != color;
+	}
 }
