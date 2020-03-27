@@ -64,4 +64,25 @@ public class Board {
 		this.columns = columns;
 	}
 	
+	/**
+	 * Metodo para retornar uma matriz piece. 
+	 * @param row - int.
+	 * @param column - int.
+	 * @return piece[row][column].
+	 */
+	public Piece piece ( int row, int column ) {
+		
+		return pieces[row][column];
+	}
+	
+	/**
+	 * Metodo para retornar a position.
+	 * @param position - Object.
+	 * @return pieces[position.getRow()][position.getColumn()]
+	 */
+	public Piece piece( Position position ) {
+		
+		return pieces[position.getRow()][position.getColumn()];
+	}
+	
 }
