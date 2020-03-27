@@ -1,10 +1,12 @@
 package chess;
 
+import boardgame.BoardException;
+
 /**
  * Classe ChessException parar exeções personalizadas.
  * @author Vinicius-PC.
  */
-public class ChessException extends RuntimeException {
+public class ChessException extends BoardException {
 
 	/**
 	 * Serial version UID.
