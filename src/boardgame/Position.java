@@ -17,11 +17,6 @@ public class Position {
 	private int column;
 	
 	/**
-	 * Construtor vazio.
-	 */
-	public Position() { }
-
-	/**
 	 * Construtor com argumentos.
 	 * @param row - int - linha posição.
 	 * @param column - int - coluna posição
