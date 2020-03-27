@@ -19,7 +19,7 @@ public class Program {
 		
 		Scanner sc = new Scanner(System.in);
 		// Receber a matriz de peças da partida de xadrez
-		while (true) {
+		while (!chessMatch.getCheckMate()) {
 			
 			try {
 				
@@ -54,6 +54,9 @@ public class Program {
 				sc.nextLine();
 			}
 		}
+		
+		UI.clearScreen();
+		UI.printMatch(chessMatch, capturedPieces);
 
 	}
 
