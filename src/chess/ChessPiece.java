@@ -14,6 +14,11 @@ public abstract class ChessPiece extends Piece {
 	 * Cor da peça de xadrez.
 	 */
 	private Color color;
+	
+	/**
+	 * Representa a quantidade de movimentos contados.
+	 */
+	private int moveCount;
 
 	/**
 	 * Construtor com argumentos.
@@ -32,6 +37,22 @@ public abstract class ChessPiece extends Piece {
 	 */
 	public Color getColor() {
 		return color;
+	}	
+	
+	/**
+	 * metodo get().
+	 * @return moveCount - int - movimentos contados.
+	 */
+	public int getMoveCount() {
+		return moveCount;
+	}
+	
+	public void increaseMoveCount() {
+		moveCount++;
+	}
+	
+	public void decreaseMoveCount() {
+		moveCount--;
 	}	
 	
 	public ChessPosition getChessPosition() {
