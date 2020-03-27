@@ -13,6 +13,16 @@ import chess.pieces.Rook;
 public class ChessMatch {
 
 	/**
+	 * Representa o outro jogador.
+	 */
+	private int turn;
+	
+	/**
+	 * Representa o atual.
+	 */
+	private Color currentPlayer;
+	
+	/**
 	 * Representa o tabuleiro de xadrez.
 	 */
 	private Board board;
@@ -23,7 +33,26 @@ public class ChessMatch {
 	public ChessMatch() { 
 		// recebendo as dimensoes de um tabuleiro de xadrez.
 		board = new Board(8, 8);
+		turn = 1;
+		currentPlayer = Color.WHITE;
 		initialSetup();
+	}
+	
+	
+	/**
+	 * metodo get().
+	 * @return turn - int - turn.
+	 */
+	public int getTurn() {
+		return this.turn;
+	}
+
+	/**
+	 * metodo get().
+	 * @return currentPlayer - Enum - currentPlayer.
+	 */
+	public Color getCurrentPlayer() {
+		return currentPlayer;
 	}
 	
 	/**
@@ -66,7 +95,7 @@ public class ChessMatch {
 		validateTargetPosition( source, target );
 		
 		Piece capturedPiece = makeMove( source, target );
-		
+		nextTurn();
 		return ( ChessPiece ) capturedPiece;
 	}
 	
@@ -88,6 +117,11 @@ public class ChessMatch {
 			throw new ChessException("Thewre is no piece on source position");
 		}
 		
+		if (currentPlayer != (( ChessPiece ) board.piece(position)).getColor()) {
+			throw new ChessException("The chosen piece is not yours");
+			
+		}
+		
 		if (!board.piece(position).isThereAnyPossibleMove()) {
 			throw new ChessException("There is no possible moves for the chosen piece");
 		}
@@ -102,6 +136,13 @@ public class ChessMatch {
 		}
 		
 	}	
+	
+	// proximo turno
+	private void nextTurn() {
+		
+		turn++;
+		currentPlayer = (currentPlayer == Color.WHITE) ? Color.BLACK : Color.WHITE;
+	}
 
 	// place new piece
 	private void placeNewPiece( char column, int row, ChessPiece piece ) {
