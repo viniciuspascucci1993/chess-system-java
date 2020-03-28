@@ -6,7 +6,7 @@ import chess.ChessPiece;
 import chess.Color;
 
 /**
- * Classe King para representar a peça Rei do xadrex.
+* Classe Bishop responsável por conter os movimentos de um Rei no xadrez.
  * @author Vinicius-PC.
  */
 public class King extends ChessPiece {

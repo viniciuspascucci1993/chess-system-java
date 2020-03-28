@@ -6,7 +6,7 @@ import chess.ChessPiece;
 import chess.Color;
 
 /**
- * Classe Pawn que contem os atributos básicos de um Peão no xadrez.
+* Classe Bishop responsável por conter os movimentos de um Peão no xadrez
  * @author Vinicius-PC.
  */
 public class Pawn extends ChessPiece {
