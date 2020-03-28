@@ -114,16 +114,16 @@ public class King extends ChessPiece {
 			}
 			
 			// Movimento Especial Rainha lado esquerdo - Roque grande
-						Position positionRookEsquerda = new Position(position.getRow(), position.getColumn() - 4);
-						if (testRookCastling(positionRookEsquerda)) {
-							Position p1 = new Position(position.getRow(), position.getColumn() - 1);
-							Position p2 = new Position(position.getRow(), position.getColumn() - 2);
-							Position p3 = new Position(position.getRow(), position.getColumn() - 3);
-							
-							if (getBoard().piece(p1) == null && getBoard().piece(p2) == null && getBoard().piece(p3) == null) {
-								mat[position.getRow()][position.getColumn() - 2] = true;
-							}
-						}			
+				Position positionRookEsquerda = new Position(position.getRow(), position.getColumn() - 4);
+				if (testRookCastling(positionRookEsquerda)) {
+					Position p1 = new Position(position.getRow(), position.getColumn() - 1);
+					Position p2 = new Position(position.getRow(), position.getColumn() - 2);
+					Position p3 = new Position(position.getRow(), position.getColumn() - 3);
+					
+					if (getBoard().piece(p1) == null && getBoard().piece(p2) == null && getBoard().piece(p3) == null) {
+						mat[position.getRow()][position.getColumn() - 2] = true;
+					}
+				}			
 		}
 		
 		
