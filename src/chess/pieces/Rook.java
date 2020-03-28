@@ -71,7 +71,7 @@ public class Rook extends ChessPiece {
 				mat[p.getRow()][p.getColumn()] = true;
 			} 		
 			
-			// verificar acima da minha peça - pata cima
+			// verificar acima da minha peça - pata baixo
 			p.setValues(position.getRow() + 1, position.getColumn());
 			while (getBoard().positionExists(p) && !getBoard().theresAPiece(p)) {
 				
