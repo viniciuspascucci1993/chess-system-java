@@ -84,7 +84,7 @@ public class Queen extends ChessPiece {
 		}
 		
 		// verificar acima da minha peça - para noroeste
-		p.setValues(position.getRow() -1, position.getColumn() - 1);
+		p.setValues(position.getRow() - 1, position.getColumn() - 1);
 		while (getBoard().positionExists(p) && !getBoard().theresAPiece(p)) {
 			
 			mat[p.getRow()][p.getColumn()] = true;
